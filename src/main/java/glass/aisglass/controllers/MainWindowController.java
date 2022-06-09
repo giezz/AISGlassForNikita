@@ -40,10 +40,10 @@ public class MainWindowController {
     private TableColumn<Delivery, String> colDescription;
 
     @FXML
-    private TableColumn<Delivery, Double> colNumberOfDelivery;
+    private TableColumn<Delivery, Integer> colNumberOfDelivery;
 
     @FXML
-    private TableColumn<Delivery, Double> colPrice;
+    private TableColumn<Delivery, Integer> colPrice;
 
     @FXML
     private TableView<Delivery> tableDelivery;
@@ -63,7 +63,7 @@ public class MainWindowController {
 
     @FXML
     protected void initialize() {
-        ObservableList<String> addresses = FXCollections.observableArrayList("Kirov", "Moscow", "Novgorod");
+        ObservableList<String> addresses = FXCollections.observableArrayList(null, "Kirov", "Moscow", "Novgorod");
         cbFilterAddress.setItems(addresses);
         colNumberOfDelivery.setCellValueFactory(new PropertyValueFactory<>("number_of_delivery"));
         colPrice.setCellValueFactory(new PropertyValueFactory<>("price_of_delivery"));
@@ -111,7 +111,7 @@ public class MainWindowController {
             else
                 sql += "(CAST(number_of_delivery AS TEXT) LIKE '%') AND ";
             if (!tfFilterPrice.getText().isEmpty())
-                sql += "(CAST(price_of_delivery AS TEXT) LIKE '" + Double.parseDouble(tfFilterPrice.getText()) + "') AND ";
+                sql += "(CAST(price_of_delivery AS TEXT) LIKE '" + Integer.parseInt(tfFilterPrice.getText()) + "') AND ";
             else
                 sql += "(CAST(price_of_delivery AS TEXT) LIKE '%') AND ";
             if (cbFilterAddress.getValue() != null)

@@ -34,7 +34,7 @@ public class DeliveryInsertController {
         System.out.println(btnInsert.getId() + "data inserted");
         DeliveryDao.create(
                 new Delivery(
-                        Double.parseDouble(tfPrice.getText()),
+                        Integer.parseInt(tfPrice.getText()),
                         cbAddress.getValue(),
                         tfDescription.getText()
                 )

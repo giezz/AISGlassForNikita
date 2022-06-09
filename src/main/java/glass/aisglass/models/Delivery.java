@@ -3,18 +3,18 @@ package glass.aisglass.models;
 public class Delivery {
 
     private int number_of_delivery;
-    private double price_of_delivery;
+    private int price_of_delivery;
     private String address_of_delivery;
     private String description_of_delivery;
 
-    public Delivery(int number_of_delivery, double price_of_delivery, String address_of_delivery, String description_of_delivery) {
+    public Delivery(int number_of_delivery, int price_of_delivery, String address_of_delivery, String description_of_delivery) {
         this.number_of_delivery = number_of_delivery;
         this.price_of_delivery = price_of_delivery;
         this.address_of_delivery = address_of_delivery;
         this.description_of_delivery = description_of_delivery;
     }
 
-    public Delivery(double price_of_delivery, String address_of_delivery, String description_of_delivery) {
+    public Delivery(int price_of_delivery, String address_of_delivery, String description_of_delivery) {
         this.price_of_delivery = price_of_delivery;
         this.address_of_delivery = address_of_delivery;
         this.description_of_delivery = description_of_delivery;
@@ -35,7 +35,7 @@ public class Delivery {
         return price_of_delivery;
     }
 
-    public void setPrice_of_delivery(double price_of_delivery) {
+    public void setPrice_of_delivery(int price_of_delivery) {
         this.price_of_delivery = price_of_delivery;
     }
 

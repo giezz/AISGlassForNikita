@@ -30,7 +30,7 @@ public class DeliveryDao {
                 deliveryObservableList.add(
                         new Delivery(
                                 resultSet.getInt(1),
-                                resultSet.getDouble(2),
+                                resultSet.getInt(2),
                                 resultSet.getString(3),
                                 resultSet.getString(4)
                         )
@@ -51,7 +51,7 @@ public class DeliveryDao {
                 deliveryObservableList.add(
                         new Delivery(
                                 resultSet.getInt(1),
-                                resultSet.getDouble(2),
+                                resultSet.getInt(2),
                                 resultSet.getString(3),
                                 resultSet.getString(4)
                         )
@@ -71,7 +71,7 @@ public class DeliveryDao {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 delivery.setNumber_of_delivery(resultSet.getInt(1));
-                delivery.setPrice_of_delivery(resultSet.getDouble(2));
+                delivery.setPrice_of_delivery(resultSet.getInt(2));
                 delivery.setAddress_of_delivery(resultSet.getString(3));
                 delivery.setDescription_of_delivery(resultSet.getString(4));
             }

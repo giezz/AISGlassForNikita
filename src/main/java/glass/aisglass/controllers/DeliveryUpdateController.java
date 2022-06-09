@@ -40,9 +40,9 @@ public class DeliveryUpdateController {
     void handleButtonAction() {
         Delivery delivery = DeliveryDao.get(ID);
         if (!tfPrice.getText().isEmpty())
-            delivery.setPrice_of_delivery(Double.parseDouble(tfPrice.getText()));
+            delivery.setPrice_of_delivery(Integer.parseInt(tfPrice.getText()));
         else
-            delivery.setPrice_of_delivery(Double.parseDouble(tfPrice.getPromptText()));
+            delivery.setPrice_of_delivery(Integer.parseInt(tfPrice.getPromptText()));
         if (cbAddress.getValue() != null)
             delivery.setAddress_of_delivery(cbAddress.getValue());
         else
